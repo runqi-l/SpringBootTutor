@@ -1,5 +1,6 @@
 package com.example.demo.modal.dto;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

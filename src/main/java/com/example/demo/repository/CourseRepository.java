@@ -2,6 +2,8 @@ package com.example.demo.repository;
 
 import com.example.demo.modal.Course;
 import com.example.demo.modal.Instructor;
+import com.example.demo.modal.dto.CourseDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import java.util.List;
 @Repository
 public class CourseRepository {
     List<Course> courses = new ArrayList<>();
+    List<CourseDto> courseDtos= new ArrayList<>();
 
     // constructor
     public CourseRepository() {
@@ -31,6 +34,12 @@ public class CourseRepository {
 
         courses.add(javaOne);
         courses.add(two);
+        CourseDto one = CourseDto.builder()
+                .courseName(javaOne.getClassName()).build();
+        CourseDto two2 = CourseDto.builder()
+                .courseName(two.getClassName()).build();
+        courseDtos.add(one);
+        courseDtos.add(two2);
     }
 
 
@@ -51,5 +60,10 @@ public class CourseRepository {
         }
 
         return new ArrayList<Course>();
+    }
+
+
+    public List<CourseDto> findAllClasses1(){
+        return courseDtos;
     }
 }
