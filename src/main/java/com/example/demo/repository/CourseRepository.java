@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class CourseRepository {
     List<Course> courses = new ArrayList<>();
     List<CourseDto> courseDtos= new ArrayList<>();
+    List<Integer> nums = new ArrayList<>(Arrays.asList(2,7,11,15));
 
     // constructor
     public CourseRepository() {
@@ -65,5 +67,9 @@ public class CourseRepository {
 
     public List<CourseDto> findAllClasses1(){
         return courseDtos;
+    }
+
+    public List<Integer> getAllNums(){
+        return nums;
     }
 }
